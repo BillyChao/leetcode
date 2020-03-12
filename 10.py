@@ -9,6 +9,7 @@ class Node:
 class Solution(object):
     def copyRandomList(self, head):
         """
+        请实现 copyRandomList 函数，复制一个复杂链表。在复杂链表中，每个节点除了有一个 next 指针指向下一个节点，还有一个 random 指针指向链表中的任意节点或者 null
         :type head: Node
         :rtype: Node
         """
@@ -27,11 +28,10 @@ class Solution(object):
         return node_list[0][0]
 
 
-if __name__ =='__main__':
+if __name__ == '__main__':
     n1 = Node(1)
     n2 = Node(2)
     n1.next = n2
     n1.random = None
     n2.random = n1
     random_list = Solution.copyRandomList(n1)
-
