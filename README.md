@@ -25,4 +25,7 @@ BFS 循环： 当队列 queue 为空时跳出；
 添加子节点： 若 node 的左（右）子节点不为空，则将左（右）子节点加入队列 queue ；
 偶数层倒序： 若 res 的长度为 奇数 ，说明当前是偶数层，则对 tmp 执行 倒序 操作。
 将当前层结果 tmp 添加入 res 。
-返回值： 返回打印结果列表 res 即可。
+返回值： 返回打印结果列表 res 即可
+
+15. 输入一棵二叉树和一个整数，打印出二叉树中节点值的和为输入整数的所有路径。从树的根节点开始往下一直到叶节点所经过的节点形成一条路径。
+![](https://leetcode-cn.com/problems/er-cha-shu-zhong-he-wei-mou-yi-zhi-de-lu-jing-lcof/)
