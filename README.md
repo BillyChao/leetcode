@@ -36,7 +36,7 @@ BFS 循环： 当队列 queue 为空时跳出；
     - 值 2 代表腐烂的橘子。
     - 每分钟，任何与腐烂的橘子（在 4 个正方向上）相邻的新鲜橘子都会腐烂。
     - 返回直到单元格中没有新鲜橘子为止所必须经过的最小分钟数。如果不可能，返回 -1
- 22. 给定一个字符串 s，找到 s 中最长的回文子串。你可以假设 s 的最大长度为 1000。
+22. 给定一个字符串 s，找到 s 中最长的回文子串。你可以假设 s 的最大长度为 1000。
     - 示例 1：
     - 输入: "babad"
     - 输出: "bab"
@@ -44,3 +44,29 @@ BFS 循环： 当队列 queue 为空时跳出；
     - 示例 2：
     - 输入: "cbbd"
     - 输出: "bb"
+ 23. 将一个给定字符串根据给定的行数，以从上往下、从左到右进行 Z 字形排列。
+
+        比如输入字符串为 "LEETCODEISHIRING" 行数为 3 时，排列如下：
+        
+        L   C   I   R
+        E T O E S I I G
+        E   D   H   N
+        之后，你的输出需要从左往右逐行读取，产生出一个新的字符串，比如："LCIRETOESIIGEDHN"。
+        
+        请你实现这个将字符串进行指定行数变换的函数：
+        
+        string convert(string s, int numRows);
+        示例 1:
+        
+        输入: s = "LEETCODEISHIRING", numRows = 3
+        输出: "LCIRETOESIIGEDHN"
+        示例 2:
+        
+        输入: s = "LEETCODEISHIRING", numRows = 4
+        输出: "LDREOEIIECIHNTSG"
+        解释:
+        
+        L     D     R
+        E   O E   I I
+        E C   I H   N
+        T     S     G
