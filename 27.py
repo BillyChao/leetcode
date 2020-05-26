@@ -19,18 +19,6 @@ class Solution:
         result = p = ListNode(0)
         heap = []
         import heapq
-        for i in range(len(lists)):
-            if lists[i]:
-                heapq.heappush(heap, (lists[i].val, i))
-                lists[i] = lists[i].next
-        while heap:
-            val, index = heapq.heappop(heap)
-            p.next = ListNode(val)
-            p = p.next
-            if lists[index]:
-                heapq.heappush(heap, (lists[index].val, index))
-                lists[index] = lists[index].next
-        return result.next
         # import heapq
         # dummy = ListNode(0)
         # p = dummy
@@ -47,6 +35,18 @@ class Solution:
         #         heapq.heappush(head, (lists[idx].val, idx))
         #         lists[idx] = lists[idx].next
         # return dummy.next
+        # merge方法
+        for i in range(len(lists)):
+            tmp = []
+            while lists[i]:
+                tmp.append(lists[i].val)
+                lists[i] = lists[i].next
+            heap.append(tmp)
+        merge = heapq.merge(*heap)
+        for node in merge:
+            p.next = ListNode(node)
+            p = p.next
+        return result.next
 
 
 if __name__ == '__main__':
