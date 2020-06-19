@@ -162,3 +162,4 @@ C 可以放在 D (500) 和 M (1000) 的左边，来表示 400 和 900。
   2->6
 ]
 输出: 1->1->2->3->4->4->5->6
+28. ![https://leetcode-cn.com/problems/vertical-order-traversal-of-a-binary-tree/](media/15925360980480.jpg)
