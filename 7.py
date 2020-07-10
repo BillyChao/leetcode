@@ -28,8 +28,23 @@ class Solution(object):
                 start = s.find(s[end], start) + 1
         return max_len
 
+    def lengthOfLongestSubstring2(self, s: str) -> int:
+        if len(set(s)) <= 1:
+            return len(set(s))
+        begin = end = 0
+        max_len = 0
+        while end < len(s):
+            if s[end] in s[begin:end]:
+                if (end - begin) > max_len:
+                    max_len = end - begin
+                begin = s.find(s[end],begin) + 1
+            end += 1
+        if (end - begin) > max_len:
+            max_len = end - begin
+        return max_len
+
 
 if __name__ == '__main__':
     s = 'pwwkew'
     solution = Solution()
-    print(solution.lengthOfLongestSubstring(s))
+    print(solution.lengthOfLongestSubstring2(s))

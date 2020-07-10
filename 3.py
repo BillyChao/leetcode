@@ -15,9 +15,15 @@ class Solution:
         else:
             return ' '.join([item[::-1] for item in s_split])
 
+    def reverseWords2(self, s: str) -> str:
+        s_split = s.split(' ')
+        if len(s_split) < 1:
+            return s
+        return ' '.join([item[::-1] for item in s_split])
+
 
 if __name__ == '__main__':
     s = 'Let\'s take LeetCode contest'
     s1 = 'aaass'
     solution = Solution()
-    print(solution.reverseWords(s1))
+    print(solution.reverseWords2(s))

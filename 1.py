@@ -23,8 +23,21 @@ class Solution:
                     return False
         return True
 
+    def isPalindrome2(self, s):
+        s = ''.join(filter(str.isalnum, s)).lower()
+        if not s:
+            return True
+        i = 0
+        j = len(s) - 1
+        while i < j:
+            if s[i] != s[j]:
+                return False
+            i += 1
+            j -= 1
+        return True
+
 
 if __name__ == '__main__':
     solution = Solution()
-    s = 'ababc'
-    print(solution.isPalindrome(s))
+    s = 'A man, a plan, a canal: Panama'
+    print(solution.isPalindrome2(s))
