@@ -33,3 +33,15 @@ class Solution:
         self.pathSum(root.right, sum)
         self.array.pop()
         return self.result
+
+    def pathSum_20210201(self, root: TreeNode, expectNumber: int):
+        if not root:
+            return []
+        self.array.append(root.val)
+        expectNumber -= root.val
+        if expectNumber == 0 and not root.left and not root.right:
+            self.result.append(self.array[:])
+        self.pathSum(root.left, expectNumber)
+        self.pathSum(root.right, expectNumber)
+        self.array.pop()
+        return self.result

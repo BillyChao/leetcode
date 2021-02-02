@@ -22,3 +22,6 @@ class Solution:
                 result = [i, _dic[diff]]
                 break
         return result
+
+    def twoSum_20210201(self, nums: list[int], target: int) -> list[int]:
+        result = []

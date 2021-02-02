@@ -19,6 +19,7 @@ class Solution:
         t = ' ' + t
         vec = [[0 for _ in range(26)] for _ in range(len(t))]
         for j in range(26):
+            # 对于每个字母，t中最后一个位置，下一次出现的位置都是-1(不会出现)
             pos = -1
             for i in range(len(t) - 1, -1, -1):
                 vec[i][j] = pos

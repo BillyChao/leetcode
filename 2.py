@@ -29,9 +29,23 @@ class Solution:
             return True
         return False
 
+    def buddyStrings_20210201(self, A: str, B: str) -> bool:
+        if len(A) != len(B):
+            return False
+        if A == B and len(A) > len(set(A)):
+            return True
+        a = b = ''
+        for i in range(len(A)):
+            if A[i] != B[i]:
+                a += A[i]
+                b += B[i]
+        if len(a) == 2 and a[::-1] == b:
+            return True
+        return False
+
 
 if __name__ == '__main__':
-    A = 'ab'
-    B = 'ba'
+    A = 'aba'
+    B = 'baa'
     solution = Solution()
-    print(solution.buddyStrings2(A, B))
+    print(solution.buddyStrings3(A, B))
