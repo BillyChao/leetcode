@@ -56,7 +56,27 @@ class Solution(object):
         return result
 
 
+def threeSum2(nums):
+    result = []
+    nums.sort()
+    for i in range(len(nums)):
+        if i > 0 and nums[i] == nums[i - 1]:
+            continue
+        right = len(nums) - 1
+        target = -nums[i]
+        for left in range(i + 1, len(nums)):
+            if left > i + 1 and nums[left] == nums[left - 1]:
+                continue
+            while left < right and nums[left] + nums[right] > target:
+                right -= 1
+            if left == right:
+                break
+            if nums[left] + nums[right] == target:
+                result.append([nums[i], nums[left], nums[right]])
+    return result
+
+
 if __name__ == '__main__':
-    nums = [1, 1, -2]
+    nums = [-4, -2, 1, -5, -4, -4, 4, -2, 0, 4, 0, -2, 3, 1, -5, 0]
     solution = Solution()
-    print(solution.threeSum(nums))
+    print(threeSum2(nums))

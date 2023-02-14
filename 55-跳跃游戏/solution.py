@@ -18,13 +18,13 @@ class Solution:
         n, right = len(nums), 0
         for i in range(n):
             if i <= right:
-                right = max(i + nums[i],right)
+                right = max(i + nums[i], right)
                 if right >= (n - 1):
                     return True
         return False
 
 
 if __name__ == '__main__':
-    nums = [0,2,3]
+    nums = [2, 1, 0, 1, 2, 1]
     solution = Solution()
     print(solution.canJump(nums))

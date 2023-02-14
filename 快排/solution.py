@@ -24,20 +24,34 @@ def helper(nums, begin, end):
     while begin < end:
         while nums[begin] < base_num and begin < end:
             begin += 1
-        if begin < end:
-            nums[end] = nums[begin]
-            end -= 1
+        nums[end] = nums[begin]
         while nums[end] > base_num and begin < end:
             end -= 1
-        if begin < end:
-            nums[begin] = nums[end]
-            begin += 1
+        nums[begin] = nums[end]
     nums[begin] = base_num
     helper(nums, low, begin - 1)
     helper(nums, end + 1, high)
 
 
-if __name__ == '__main__':
-    nums = [2, 4, 7, 10, 3, 12, 56, 23, 45]
-    helper(nums, 0, len(nums) - 1)
-    print(nums)
+
+def quick_sort(array, left, right):
+    if left >= right:
+        return
+    low = left
+    high = right
+    key = array[low]
+    while left < right:
+        while left < right and array[right] > key:
+            right -= 1
+        array[left] = array[right]
+        while left < right and array[left] <= key:
+            left += 1
+        array[right] = array[left]
+    array[right] = key
+    quick_sort(array, low, left - 1)
+    quick_sort(array, left + 1, high)
+
+
+nums = [1,1,3,5]
+quick_sort(nums, 0, len(nums) - 1)
+print(nums)

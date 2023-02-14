@@ -22,3 +22,11 @@ class Solution:
                 area = max(area, height[end] * (end - begin))
                 end -= 1
         return area
+
+    def maxArea1(self, height: list[int]) -> int:
+        """
+        牛客网，使用滑动窗口
+        :param height:
+        :return:
+        """
+

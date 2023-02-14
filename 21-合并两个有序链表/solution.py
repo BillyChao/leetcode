@@ -36,6 +36,32 @@ class Solution:
             tmp.next = l2
         return head.next
 
+    def mergeTwoLists1(self, l1: ListNode, l2: ListNode) -> ListNode:
+        """
+        剑指offer
+        :param l1:
+        :param l2:
+        :return:
+        """
+        if not l1:
+            return l2
+        if not l2:
+            return l1
+        head = pre = ListNode(0)
+        while l1 and l2:
+            if l1.val < l2.val:
+                pre.next = l1
+                l1 = l1.next
+            else:
+                pre.next = l2
+                l2 = l2.next
+            pre = pre.next
+        if l1:
+            pre.next = l1
+        if l2:
+            pre.next = l2
+        return head.next
+
 
 if __name__ == '__main__':
     n0 = ListNode(0)
