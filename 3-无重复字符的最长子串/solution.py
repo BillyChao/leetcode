@@ -40,8 +40,27 @@ class Solution:
         max_len = max(max_len, right - left)
         return max_len
 
+    def lengthOfLongestSubstring2(self, s: str) -> int:
+        """
+       :type s: str
+       :rtype: int
+       """
+        if len(s) <= 1:
+            return len(s)
+        left = 0
+        right = 1
+        max_len = 0
+        while left < right and right < len(s):
+            tmp = s[left:right]
+            if s[right] in tmp:
+                max_len = (right - left) if max_len < (right - left) else max_len
+                left = s.index(s[right], left, right) + 1
+            right += 1
+        max_len = max(max_len, right - left)
+        return max_len
+
 
 if __name__ == '__main__':
     s = 'aaaaaabbbc'
     solution = Solution()
-    print(solution.f(s))
+    print(solution.lengthOfLongestSubstring2(s))
